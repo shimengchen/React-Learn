@@ -1,5 +1,6 @@
 import React,{Component} from 'react'
-import './App.css'
+import Button from 'antd/lib/button'
+import './App.css';
 
 class App extends Component{
   constructor(props) {
@@ -32,10 +33,10 @@ class App extends Component{
   }
 }
 function LoginButton(props){
-  return <button onClick={props.onClick}>登录</button>;
+  return <Button type="primary" onClick={props.onClick}>登录</Button>;
 }
 function LogoutButton(props){
-  return <button onClick={props.onClick}>退出</button>;
+  return <Button type="primary" onClick={props.onClick}>退出</Button>;
 }
 function UserGreeting(props){
   return <h1>欢迎回来</h1>;

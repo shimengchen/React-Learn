@@ -1,10 +1,2 @@
-button{
-  background-color: rgb(116, 46, 46);
-  border: 2 solid black;
-  padding:4px 6px;
-  color: #fff;
-}
+@import '~antd/dist/antd.css';
 
-h1{
-  color: blueviolet;
-}
