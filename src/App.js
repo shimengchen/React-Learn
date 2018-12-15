@@ -1,28 +1,55 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React,{Component} from 'react'
+import './App.css'
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
+class App extends Component{
+  constructor(props) {
+      super(props);
+      this.state={isLoggedIn:false};
+      this.handleLoginClick=this.handleLoginClick.bind(this);
+      this.handleLogoutClick=this.handleLogoutClick.bind(this);
+      
+  }
+  handleLoginClick(){
+      this.setState({isLoggedIn:true});
+  }
+  handleLogoutClick(){
+      this.setState({isLoggedIn:false});
+  }
+  render(){
+      const isLoggedIn=this.state.isLoggedIn;
+      let button;
+      if(isLoggedIn){
+          button=<LogoutButton onClick={this.handleLogoutClick}/>
+      }else{
+          button=<LoginButton onClick={this.handleLoginClick}/>;
+      }
+      return (
+          <div>
+              <Greeting isLoggedIn={isLoggedIn}/>
+              {button}
+          </div>
+      );
+  }
+}
+function LoginButton(props){
+  return <button onClick={props.onClick}>登录</button>;
+}
+function LogoutButton(props){
+  return <button onClick={props.onClick}>退出</button>;
+}
+function UserGreeting(props){
+  return <h1>欢迎回来</h1>;
+}
+function GuestGreeting(props){
+  return <h1>请先注册</h1>;
+}
+function Greeting(props){
+  const isLoggedIn=props.isLoggedIn;
+  if(isLoggedIn){
+      return <UserGreeting/>
+  }else{
+      return <GuestGreeting/>
   }
 }
 
-export default App;
+export default App
