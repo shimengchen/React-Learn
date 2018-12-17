@@ -1,0 +1,55 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+div{
+    border:1px solid black;
+    box-sizing: border-box;
+    text-align: center;
+}
+.container{
+    overflow: hidden;
+    width: 301px;
+    height: 301px;
+    position: relative;
+}
+.a,.b,.c,.d,.e{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.a,.c{
+    width: 100px;
+    height: 200px;
+}
+.b,.d{
+    width: 200px;
+    height: 100px;
+}
+.a{
+    position:absolute;
+    top:0px;
+    left:0px;
+}
+.b{
+    position:absolute;
+    right:0px;
+    top:0px;
+}
+.d{
+    position:absolute;
+    left:0px;
+    bottom:0px;
+}
+.c{
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+}
+.e{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top:99.5px;
+    right: 99.5px;    
+}
