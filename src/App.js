@@ -4,7 +4,7 @@ import NameCard from './component/nameCard'
 import LikesButton from './component/LikesButton'
 import DigitalClock from './component/DigitalClock'
 import ComponentBox from './component/ComponentBoxControled'
-import ComponentBoxUncontrol from './component/ComponentBoxUncontriled'
+import GuestBook from './component/GuestBook'
 
  const tags=['天才少女','躺鸡专业户'];
 class App extends Component{
@@ -14,7 +14,7 @@ class App extends Component{
             <LikesButton/>
             <DigitalClock/>
             <ComponentBox/>
-            <ComponentBoxUncontrol/>
+            <GuestBook/>
         </div>);
     }
 }
